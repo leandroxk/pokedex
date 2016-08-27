@@ -22,11 +22,14 @@ class Message():
 
 
 config = {
+    'global': {
+        'server.socket_host': '0.0.0.0',
+        'server.socket_port': int(os.environ.get('PORT', 8080)),
+    },
 	'/': {
         'tools.trailing_slash.on': False,
         'tools.gzip.on': True
     }
 }
 
-cherrypy.config.update({'server.socket_port': int(os.getenv('PORT', 8080))})
 cherrypy.quickstart(EmailAlert(), '/alert', config)
