@@ -24,8 +24,8 @@ class Message():
 config = {
 	'/': {
         'tools.trailing_slash.on': False,
-        'tools.gzip.on': True,
-        'server.socket_port': 80
+        'tools.gzip.on': True
     }
 }
+cherrypy.config.update({'server.socket_port': 80,})
 cherrypy.quickstart(EmailAlert(), '/alert', config)
