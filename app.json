@@ -1,15 +1,12 @@
 {
   "name": "pokemon-alert",
+  "image": "heroku/python",
   "scripts": {
   },
   "env": {
   },
   "formation": {
   },
-  "addons": [
-
-  ],
-  "buildpacks": [
-
-  ]
+  "addons": [ ],
+  "buildpacks": [ ]
 }
