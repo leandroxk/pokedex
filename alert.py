@@ -28,5 +28,5 @@ config = {
     }
 }
 
-cherrypy.config.update({'server.socket_port': os.getenv('PORT', 8080)})
+cherrypy.config.update({'server.socket_port': int(os.getenv('PORT', 8080))})
 cherrypy.quickstart(EmailAlert(), '/alert', config)
