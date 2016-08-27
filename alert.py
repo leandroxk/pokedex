@@ -1,5 +1,5 @@
 import cherrypy
-
+import os
 
 class EmailAlert():
 
@@ -27,5 +27,6 @@ config = {
         'tools.gzip.on': True
     }
 }
-cherrypy.config.update({'server.socket_port': 80,})
+
+cherrypy.config.update({'server.socket_port': os.getenv('PORT', 8080)})
 cherrypy.quickstart(EmailAlert(), '/alert', config)
