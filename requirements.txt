@@ -1,1 +1,3 @@
-cherrypy
+cherrypy==7.1.0
+retrying==1.3.3
+ntplib==0.3.3
