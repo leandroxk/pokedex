@@ -19,12 +19,13 @@ class Message():
 		self.longitude = body['longitude']
 		self.time_until_hidden = body['time_until_hidden_ms']
 		self.latitude = body['latitude']
-		
+
 
 config = {
 	'/': {
         'tools.trailing_slash.on': False,
-        'tools.gzip.on': True
+        'tools.gzip.on': True,
+        'server.socket_port': 8099
     }
 }
 cherrypy.quickstart(EmailAlert(), '/alert', config)
