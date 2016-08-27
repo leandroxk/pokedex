@@ -25,7 +25,7 @@ config = {
 	'/': {
         'tools.trailing_slash.on': False,
         'tools.gzip.on': True,
-        'server.socket_port': 8099
+        'server.socket_port': 80
     }
 }
 cherrypy.quickstart(EmailAlert(), '/alert', config)
