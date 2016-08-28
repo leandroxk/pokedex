@@ -66,10 +66,6 @@ class PokemonEncounter():
 
 
 config = {
-    'global': {
-        'server.socket_host': '0.0.0.0',
-        'server.socket_port': int(os.environ.get('PORT', 8080)),
-    },
     '/': {
         'tools.trailing_slash.on': False,
         'tools.gzip.on': True
@@ -78,6 +74,11 @@ config = {
 
 cherrypy.tree.mount(EmailAlert(), '/alert', config)
 cherrypy.tree.mount(Pokedex(), '/pokedex', config)
+
+cherrypy.config.update({
+    'server.socket_host': '0.0.0.0',
+    'server.socket_port': int(os.environ.get('PORT', 8080)),
+})
 
 cherrypy.engine.start()
 cherrypy.engine.block()
